@@ -1,10 +1,10 @@
 TODO
 
 - [x] write
-- [ ] read
-- [ ] store
-- [ ] load
-- [ ] merge
-- [ ] clear
+- [x] read
+- [x] store
+- [x] load
+- [x] merge
+- [x] clear
 
 - [ ] tests?
