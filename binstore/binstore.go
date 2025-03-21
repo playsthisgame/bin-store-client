@@ -44,7 +44,7 @@ func (c *BinStoreClient) Close() {
 func (c *BinStoreClient) Write(key int64, data *[]byte) error {
 
 	cmd := &types.TCPCommand{
-		Command: 0,
+		Command: 1,
 		Data:    *data,
 		Key:     key,
 	}
@@ -54,7 +54,7 @@ func (c *BinStoreClient) Write(key int64, data *[]byte) error {
 
 func (c *BinStoreClient) Read(key int64) (*[]byte, error) {
 	cmd := &types.TCPCommand{
-		Command: 1,
+		Command: 2,
 		Key:     key,
 	}
 
@@ -74,7 +74,7 @@ func (c *BinStoreClient) Read(key int64) (*[]byte, error) {
 
 func (c *BinStoreClient) Store(name string) error {
 	cmd := &types.TCPCommand{
-		Command: 2,
+		Command: 3,
 		Data:    []byte(name),
 		Key:     0,
 	}
@@ -84,7 +84,7 @@ func (c *BinStoreClient) Store(name string) error {
 
 func (c *BinStoreClient) Load(name string) error {
 	cmd := &types.TCPCommand{
-		Command: 3,
+		Command: 4,
 		Data:    []byte(name),
 		Key:     0,
 	}
@@ -94,7 +94,7 @@ func (c *BinStoreClient) Load(name string) error {
 
 func (c *BinStoreClient) Merge(name string) error {
 	cmd := &types.TCPCommand{
-		Command: 4,
+		Command: 5,
 		Data:    []byte(name),
 		Key:     0,
 	}
@@ -104,7 +104,7 @@ func (c *BinStoreClient) Merge(name string) error {
 
 func (c *BinStoreClient) Clear() error {
 	cmd := &types.TCPCommand{
-		Command: 5,
+		Command: 6,
 		Key:     0,
 	}
 
